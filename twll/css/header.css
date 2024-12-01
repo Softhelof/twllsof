@@ -1,0 +1,181 @@
+header {
+    background-color: var(--colorBg-dark);
+    color: var(--colorSecondary);
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+header .profile {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+}
+
+header .profile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--colorMain);
+}
+
+header .profile h1 {
+    font-family: var(--font-header);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header .profile p {
+    font-size: 0.9rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--colorSecondary);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--colorCTA);
+}
+
+header section select {
+    background: var(--colorSecondary);
+    color: var(--colorBg-dark);
+    border: 1px solid var(--colorMain);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--colorMain);
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.highlight > .text {
+    width: 100%;
+    text-align: center;
+    margin: 0.5rem 1rem;
+}
+
+.highlight .text h2 {
+    background-color: var(--colorCTA);
+    color: var(--colorBg-dark);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.highlight .text h3 {
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.highlight img {
+    margin-top: 1.5rem;
+    max-width: 150px;
+    border: 3px solid var(--colorBg-dark);
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .highlight {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    .highlight .text h2, .highlight .text {
+        grid-column: 1 / 3;
+    }
+    .highlight img {
+        grid-row: 1 / 3;
+        grid-column: 3 / 4;
+    }
+    .highlight .text h2 {
+        padding: 1rem;
+        margin: 1rem 30%;
+    }
+    .highlight .text {
+        width: calc(100% - (1rem * 2));
+    }
+}
+
+@media (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .highlight {
+        grid-column: 1 / 6;
+    }
+
+    .bio {
+        grid-column: 1 / 5;
+    }
+
+    .inside span {
+        display: block;
+        font-size: 0.8rem;
+    }
+}
+
+.inside {
+    flex: 1; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1rem; 
+    padding: 0.5rem; 
+}
+
+.inside article {
+    padding: 1rem; 
+    text-align: center;
+    background-color: var(--colorBg-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inside article img {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 0.5rem; 
+}
+
+.inside article h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.inside article p {
+    font-size: 0.85rem; 
+    margin: 0.25rem 0; 
+}
+
+@media (min-width: 800px) {
+    .inside {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1.5rem; 
+    }
+}

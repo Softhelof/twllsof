@@ -1,0 +1,32 @@
+.bio-container {
+    display: flex; 
+    gap: 2rem; 
+    max-width: auto; 
+    margin: 0 auto; 
+    padding: 2rem 1rem; 
+    background-color: var(--colorSecondary);
+}
+
+.bio {
+    flex: 2; 
+    line-height: 1.6; 
+    height: auto;
+}
+
+.bio blockquote {
+    margin: 1.5rem 0;
+    background-color: var(--colorCTA);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--colorBg-dark);
+}
+
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column; 
+    }
+
+    .bio, .inside {
+        flex: 1; 
+    }
+}
